@@ -1,0 +1,2 @@
+These two files make up DAL 26 and 30.
+Since our front end is not accesible through normal means, I only pushed the plugins that we have made that we will use in our product file system (word press). This is not the complete front end and is only what the product owner required of us.

@@ -1,0 +1,88 @@
+summary.md (Max 8 marks)
+  - Project objectives have been specified clearly (max 2 marks) [0 marks: not at all, 1 mark = somewhat clearly, 2 marks = clearly]
+    Your mark: 2
+  - Key users have been identified clearly (max 2 marks) [0 marks: not at all, 1 mark = somewhat clearly, 2 marks = clearly]
+    Your mark: 2
+  - Scenarios have been described clearly (max 2 marks) [0 marks: not at all, 1 mark = somewhat clearly, 2 marks = clearly]
+    Your mark: 0
+Comment: The group has not presented a character in the scenarios, Instead of they can use the website -> you say they used the website and the following happened. 
+Example: Mark has a question about Breton-XYZ pills and does not know the side effects when taken without food. Then Mark asks the website for the answer and he is able to rest assured that the pills have no side effects. 
+  - Principles have been described clearly (max 2 marks) [0 marks: not at all, 1 mark = somewhat clearly, 2 marks = clearly]
+    Your mark: 2 
+	
+	summary.md mark: 6/8
+	
+competition.md (Max 2 marks)
+  - Competition has been identified clearly (max 2 marks) [0 marks: not at all, 1 mark = somewhat clearly, 2 marks = clearly]
+    Your mark:1
+Comment: why would you compare PayPal\'92s search engine to you project when the scopes of the project is different. A better comparison would be with webmd.com 
+ 
+	competition.md mark: 1/2
+
+Product Backlog PB.md (Max 8 marks) 
+  -Sufficient stories created to occupy team for release 1 (max 2 marks) [0 marks = no user stories, 1 mark = few user stories, clearly not enough
+   to occupy team for release 1, 2 marks = excellent]
+   Your mark: 1
+  -Relevant persona clearly identified for each user story (max 2 marks) [0 marks = no personas mentioned in user stories, 1 mark = part of the stories
+   do not mention persona, 2 marks = all user stories identify relevant persona]
+   Your mark: 1
+Comment: The above stories fit the template, but the roles are about the creators of the system, not its users. As a developer not a proper persona for user story
+  -All user stories identify goal/desire and all identify why/benefit (max 2 marks) [0 marks = no user story identifies goals, 1 mark = part of the stories do not identify goals, 2 marks = all user stories identify goals]
+   Your mark: 1
+  -Writing (max 2 marks) [0 marks = writing is poor and with errors, 1 mark = writing is not clear for some stories, 2 marks = writing is very clear for all stories]
+   Your mark: 1
+
+   PB.md mark: 3/8 
+   
+Definition of done: done.md (max 2 marks)
+   -Definition of done is relevant to the project and applies to all stories [2 marks]
+   -Definition of done is somewhat relevant and does not apply to all stories [1 mark]
+   -Definition of done missing or unclear [0 marks]
+   Your mark: 1
+
+done.md mark: 2/2
+   
+Personas.pdf (max 8 marks)
+ - Two or more high quality personas provided [4 marks], two personas provided but quality is not very good [3 marks]
+   only 1 persona provided with good quality [2 marks], one persona of poor quality [1 mark], no personas provided [0 marks]
+	-Quality of the persona should be measured based on the presence/absence/quality of description of the following 
+elements :
+	   Age, personality, personal background
+	   Skills, professional background
+	   Attitude towards technology, domain, etc.
+	   Goals when using the system
+	Your mark: 2
+Comment: the only persona I see with poor quality is the one under section User
+  -Personas are highly relevant to the system [2 marks], somewhat relevant [1 mark], not at all relevant or no personas [0 marks]
+    Your mark: 2
+  -Description is of appropriate length and is well-written [2 marks], short and/or with errors [1 mark], no writing or poor quality [0 marks]
+    Your mark: 1
+	Personas.pdf mark: 4/8
+
+Process: process.md (max 10 marks)\
+  -Team organization (roles) divided clearly [2 marks max, 1 mark unclear, 0 marks if not done]\
+   Your mark: 2
+  -Decision making [2 marks max if described clearly, 1 mark if unclear, 0 marks if not done]\
+   Your mark: 1
+Comment: How are ties disputed, looking for method on decision like the majority of votes win or we make sure everyone agrees on an opinion.
+  -Prioritizing user stories [2 marks if clear and sound criteria used, 1 mark if somewhat clear criteria used, 0 marks if not done]
+   Your mark: 1
+Comment: Looking for how you assigned weights for the User stories and was also looking for styles of assigning this point such as Scrum Poker Method. 
+  -Meetings [2 marks if meeting described clearly, 1 mark if description is unclear, 0 marks if description is missing]
+   Your mark: 2
+  -Next phase [2 marks if description is clear, 1 mark if somewhat clear, 0 marks if no description]
+   Your mark: 2
+   
+   process.md mark: 8/10
+   
+User experience: (max 4 marks)
+   -User experience is logically related to scenarios (from summary.md) [2 marks if relates well, 1 mark if somewhat related,
+   0 marks if missing or not related]
+   Your mark: 0
+   -Graphic representation is clear and represents well indended user interface elements [2 marks if clear and well done, 1 mark if not very clear, 
+   0 marks if missing or completely unclear]
+   Your mark: 0
+   
+   User experience mark: 0/4
+
+Total mark for phase 1: 26/42

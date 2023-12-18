@@ -1,0 +1,591 @@
+body {
+	/* margin: 10px; */
+	/* border: 1px solid gray; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+	min-height: 100vh;
+    max-height: 100%;
+	/* note: i only fugured out the two above 
+	heights late into development so theres
+	some remnants in the style */
+    margin:0px;
+
+	background-color: black;
+	font-family: Helvetica;
+	color: white;
+	/* padding:10px;
+	margin:5px; */
+    overflow:visible;
+    background-image: linear-gradient(180deg, #180000, #4b0505);
+    box-shadow: 0 0 200px rgba(0,0,0,0.9) inset;
+}
+
+/* this is the main holder for the style */
+.loginStyle{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-color: transparent;
+    justify-content: center;
+    /* border: 1px solid red; */
+}
+
+.Intro{
+    background-color: black;
+    display: flex;
+    border-radius:45px;
+    flex-direction: column;
+    flex-wrap: wrap;
+    flex-shrink: 1;
+    flex-grow:1;
+    align-self: center;
+    /* border: 1px solid white; */
+    -webkit-box-shadow:0 0 20px #d30000; 
+    -moz-box-shadow: 0 0 20px #d30000; 
+    box-shadow:0 0 20px #d30000;
+}
+
+.gameUIVisual{
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    flex-shrink: 1;
+    flex-grow:1;
+    align-self: center;
+    /* border: 1px solid white; */
+    -webkit-box-shadow:0 0 20px #d30000; 
+    -moz-box-shadow: 0 0 20px #d30000; 
+    box-shadow:0 0 20px #d30000;
+}
+
+.pageTopBar{
+ text-align: center; 
+ background-color: #bb0000; 
+ margin:0px; 
+ margin-left: -25px;
+ margin-right: -25px;
+ border-radius: 44px 44px 0px 0px;
+ 
+}
+
+.scoreTable,td{
+	border: 1px solid rgb(109, 0, 0);
+	padding:5px;
+	box-shadow: 0 0 5px #bd1515;
+	margin:20px;
+}
+
+.IntroHeader{
+    text-align: center;
+	/* maybe just white? */
+    background: -webkit-linear-gradient(#eee, rgb(143, 143, 143));
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.IntroContent{
+    display: flex;
+    flex-direction: column;
+}
+
+.editProfile{
+	display: flex;
+    flex-direction: column;
+	background-color: rgb(0, 0, 0);
+	padding: 25px;
+	justify-self: center;
+	border-radius: 20px;
+	-webkit-box-shadow:0 0 10px #d30000; 
+    -moz-box-shadow: 0 0 10px #d30000; 
+    box-shadow:0 0 10px #d30000;
+}
+
+.aboutHolder{
+	/* this is for the 100vh, we override it */
+	display: flex;
+	flex-wrap: nowrap;
+	flex-direction: column;
+	max-height: 100%;
+}
+
+.instructHolder{
+	max-height: 100%;
+}
+
+.mainHolder{
+	display: flex;
+	flex-wrap: nowrap;
+	flex-direction: column;
+	max-height: 100%;
+	/* border: 1px solid transparent; width:100%; */
+}
+
+.aboutHeader{
+	margin-left: 50px;
+	cursor: pointer;
+}
+
+.aboutDocumentEntry{
+	margin-bottom: 0px; 
+	margin-top:0px;
+}
+
+.aboutDocumentContent{
+	margin-bottom: 0px; 
+	margin-top:0px; 
+	margin-left:10px;
+}
+
+.gameUIHolder{
+	position: absolute;
+}
+
+.gameOverHolder{
+	position: absolute;
+
+	background-color: black;
+    border-radius:45px;
+    text-align: center;
+    /* border: 1px solid white; */
+    -webkit-box-shadow:0 0 20px #d30000; 
+    -moz-box-shadow: 0 0 20px #d30000; 
+    box-shadow:0 0 20px #d30000;
+	margin: 25px;
+	padding-top:10px;
+	padding-bottom:10px;
+	padding-left:25px;
+	padding-right:25px;
+}
+
+.gameOverText{
+	color:white;
+	font-family: "Lucida Console", monospace;
+	background-color: transparent; 
+	outline: none;
+	max-width:50px;
+	border: transparent;
+}
+
+.pauseHolder{
+	/* allows it to be on top of others VVV */
+	position: absolute;
+
+	background-color: black;
+    display: flex;
+	/* for somereason just doing height and width will not work */
+	max-width: 40%;
+	min-width: 40%;
+
+    border-radius:45px;
+    flex-direction: column;
+    flex-wrap: wrap;
+    flex-shrink: 1;
+    flex-grow:1;
+    align-self: center;
+    /* border: 1px solid white; */
+    -webkit-box-shadow:0 0 20px #d30000; 
+    -moz-box-shadow: 0 0 20px #d30000; 
+    box-shadow:0 0 20px #d30000;
+	padding-top:10px;
+	padding-bottom:10px;
+	padding-left:25px;
+	padding-right:25px;
+}
+
+.mainContent{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+
+.aboutProject{
+	background-color: black;
+    display: flex;
+    border-radius:45px;
+    flex-direction: column;
+    flex-wrap: wrap;
+    flex-shrink: 1;
+    flex-grow:1;
+    align-self: center;
+    /* border: 1px solid white; */
+    -webkit-box-shadow:0 0 20px #d30000; 
+    -moz-box-shadow: 0 0 20px #d30000; 
+    box-shadow:0 0 20px #d30000;
+	margin: 25px;
+	padding-top:10px;
+	padding-bottom:10px;
+	padding-left:25px;
+	padding-right:25px;
+}
+
+
+.deco1{
+    max-width: 100px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    /* border: 1px solid white; */
+    /* height: 100vh; */
+    flex-shrink: 1;
+}
+
+.deco2{
+    max-width: 100px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex-shrink: 1;
+    /* border: 1px solid white; */
+}
+
+.Welcome{
+    font-family: "Tahoma","Impact", "Andalé Mono","Lucida Console", monospace;
+	background-color: transparent;
+	border-style: solid;
+	border-width: 3px;
+  border-image:linear-gradient(to bottom, #d30000, black) 1 100%;
+	
+	
+}
+
+.glitch{
+    color: rgb(212, 0, 0);
+    text-shadow: 2px 2px 8px #d30000;
+    font-family: "Lucida Console", monospace;
+    font-weight: 900;
+}
+
+.whiteGlitch{
+	color: rgb(255, 255, 255);
+    text-shadow: 2px 2px 8px #bebebe;
+    font-family: "Lucida Console", monospace;
+}
+
+.vertical{
+    font-family: "Impact", "Lucida Console", monospace;
+    color: #c20000;
+    writing-mode: vertical-lr;
+    text-shadow: 2px 2px 8px #d30000;
+}
+
+.textInput{
+	color:white;
+	background-color:black;
+	border: 2px solid #bb0000; 
+	border-radius:5px;
+	font-size: 15px;
+	padding-left:5px;
+	outline: none;
+}
+
+::placeholder { /* Most modern browsers support this now. */
+   color:    rgb(255, 255, 255);
+   opacity:1;
+}
+
+.onlyHolder{
+	border: 1px solid green;
+	text-align: center;
+}
+
+/* button start */
+.introSubL{
+	color:white;
+	font-size: 15px;
+	min-width: 125px;
+	max-width: 125px;
+	text-align: center;
+	background-image: linear-gradient(180deg, #5c0101, #bb0000);
+	border: 3px double #d30000;
+	border-radius:5px 0px 0px 5px; 
+	outline:none;
+}
+
+.introSubL:hover{
+	background-image: linear-gradient(180deg, #5c3201, #bb5a00);
+	cursor: pointer;
+}
+
+.introSub{
+	color:white;
+	font-size: 15px;
+	min-width: 100px;
+	text-align: center;
+	background-image: linear-gradient(180deg, #5c0101, #bb0000);
+	border: 3px double #d30000;
+	border-radius:5px;
+	outline:none;
+}
+
+.introSub:hover{
+	background-image: linear-gradient(180deg, #5c3201, #bb5a00);
+	cursor: pointer;
+}
+
+.playButton{
+	font-size: 100px;
+	color:white;
+	font-size: 50px;
+	min-width: 160px;
+	min-height:80px;
+	max-width:200px;
+	text-align: center;
+	background-color: transparent;
+	background-image: linear-gradient(180deg, #5c0101, #bb0000);
+	border: 3px double #d30000;
+	border-radius:5px;
+	outline:none;
+}
+
+.playButton:hover{
+	background-image: linear-gradient(180deg, #5c3201, #bb5a00);
+	cursor: pointer;
+}
+
+.introSubCenter{
+	color:white;
+	font-size: 15px;
+	min-width: 100px;
+	text-align: center;
+	background-image: linear-gradient(180deg, #5c0101, #bb0000);
+	border: 3px double #d30000;
+	outline:none;
+}
+
+.introSubCenter:hover{
+	background-image: linear-gradient(180deg, #5c3201, #bb5a00);
+	cursor: pointer;
+}
+
+.introSubR{
+	min-width: 125px;
+	max-width: 125px;
+	text-align: center;
+	color:white;
+	font-size: 15px;
+	background-image: linear-gradient(180deg, #5c0101, #bb0000);
+	border: 3px double #d30000; 
+	border-radius:5px;
+	border-radius:0px 5px 5px 0px;
+	outline:none;
+}
+
+.introSubR:hover{
+	background-image: linear-gradient(180deg, #5c3201, #bb5a00);
+	cursor: pointer;
+}
+
+/* button end */
+
+.buttonHolder{
+	display: flex;
+	justify-content: center;
+}
+
+main{
+	display: flex;
+	flex-wrap: wrap; 
+	padding:5px;
+}
+
+
+footer{
+	padding:5px;
+}
+
+
+input{
+	margin: 5px;
+}
+
+
+img[src=""] {
+	height: 125px;
+	width: 60px;
+	visibility: hidden;    
+}
+
+
+ol{
+	display: block;
+	width:70%
+}
+
+
+ul {
+	list-style-type: none;
+	display: flex;
+	flex-wrap: wrap;
+	margin-left: 2px;
+	margin-right: 2px;
+	align-items: stretch;
+	justify-content: center;
+	border: 1px solid white;
+	text-align: center;
+	color: white;
+	padding: 0px;
+	border: 1px solid black;
+}
+
+
+section{
+	margin:20px;
+	display: flex;
+	justify-self: stretch;
+	padding: 20px;
+	
+}
+
+
+button {     
+	
+	background-color: Transparent;
+    border: none;
+    overflow: hidden;
+    outline:none;
+	padding:10px;
+	margin:0;
+	width: 140px;
+	display: flex;
+	justify-self: center;
+	
+}
+
+
+h1{
+	font-family: Helvetica;
+}
+
+
+form{
+	display: flex;
+	justify-content: stretch;
+	flex-wrap: nowrap;
+}
+
+
+@media only screen and (max-width: 600px){
+	ul{
+		display: flex;
+		flex-direction: column;
+	}
+}
+
+
+@media only screen and (max-width: 970px){
+	form{
+		display: flex;
+		flex-direction: column;
+		flex-grow: 1;
+		justify-content: center;
+	}
+
+	button{
+		padding: 10px;
+		height: 80px;
+	}
+}
+
+
+@media only screen and (min-width: 1000px){
+
+	section{
+		max-width: 50%;
+	}
+
+	.stats{
+		margin: 20px;
+		padding: 10px;
+		max-width: 40%;
+	}
+}
+
+
+li{
+	display: flex;
+	flex-wrap: wrap;
+	flex-grow: 1;
+	align-items: stretch;
+	border: 2px solid white;
+	background-color: rgb(53,133,151);
+	justify-content: space-around;
+	padding: 5px;
+}
+
+
+a {
+	font-family: Helvetica;
+	text-decoration: none;
+	color: white;
+	text-align: center;
+}
+
+
+a:hover{
+	color: rgb(118, 211, 228);
+}
+
+
+nav{
+	display: block;
+}
+
+
+footer{
+	text-align: center;
+}
+
+
+.guess{
+	display:flex;
+	flex-direction: column;
+	border: 1px solid rgb(53,133,151);
+}
+
+
+.rps{
+	display:flex;
+	flex-direction: column;
+	border: 1px solid rgb(53,133,151);
+}
+
+
+.frog{
+	display:flex;
+	flex-direction: column;
+	border: 1px solid rgb(53,133,151);
+}
+
+
+.prof{
+	display:flex;
+	flex-direction: column;
+	border: 1px solid rgb(53,133,151);
+}
+
+
+.message{
+	margin:10px;
+	padding:5px;
+	background-color: rgb(236, 191, 181);;
+}
+
+
+.leaderboard{
+	display: block;
+	text-align: left;
+}
+
+
+.formFields{
+	display:flex;
+	flex-direction: column;
+}
+
+
+.linkToForm{
+	text-decoration: underline;
+}

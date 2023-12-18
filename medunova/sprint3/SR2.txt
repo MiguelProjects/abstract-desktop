@@ -1,0 +1,20 @@
+Sprint 2 Retrospect
+
+Attendence: REDACTED
+
+Good practices:
+-Planned out what had to be done in comparison to last sprint and the use Jira was better, although weas a bit delayed next week should
+be done faster and update Jira more frequently
+-Regular meetings and communication with group members and product owner/staff via Slack
+
+Bad practices:
+-Took too long to start sprint, we had ideas earlier but the sprint was started mid-week instead of start, must prioritize backlog more
+-Need to be more descriptive on our posts on Jira, the TA's found it hard to track what we were doing and how we approached the story must make it
+clear how we approach the story and its purpose.
+-Need to follow the CRC cards more and closely connect our code to them, our team is currently programming different functions but when
+we connect them we need to know what our design is
+
+Next Week:
+-Have better timing with the sprint start and uploading to product backlog using Jira
+-Have CRC meeting to have a overall better design
+-Any user stories finished we can hold a quick meeting to show and test

@@ -1,0 +1,372 @@
+.controller{
+    position:absolute;
+    bottom:15%;
+    left:15%;
+}
+
+
+/*ui_login */
+
+.noBottomMargin{
+    font-family: "Tahoma","Impact", "Andalé Mono","Lucida Console", monospace;
+	background-color: transparent;
+	border-style: solid;
+	border-width: 3px;
+  border-image:linear-gradient(to bottom, #d30000, black) 1 100%;
+    margin-bottom: 0px;   
+}
+
+.headerSlogan{
+    color: rgb(212, 0, 0);
+    text-shadow: 2px 2px 8px #d30000;
+    font-family: "Lucida Console", monospace;
+    font-weight: 900;
+    margin-bottom: 10px; 
+    text-align: center;
+}
+
+.TACenter{
+    text-align:center;
+}
+
+.TARight{
+    color: rgb(212, 0, 0);
+    text-shadow: 2px 2px 8px #d30000;
+    font-family: "Lucida Console", monospace;
+    font-weight: 900;
+    text-align:left;
+}
+
+/*ui_main */
+.mainHeader{
+    text-align: center;
+    background: -webkit-linear-gradient(#eee, rgb(143, 143, 143));
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: left; 
+    margin-bottom: 5px;
+
+}
+
+.mainBody{
+    background-color: black;
+    display: flex;
+    border-radius:45px;
+    flex-direction: column;
+    flex-wrap: wrap;
+    flex-shrink: 1;
+    flex-grow:1;
+    align-self: center;
+    -webkit-box-shadow:0 0 20px #d30000; 
+    -moz-box-shadow: 0 0 20px #d30000; 
+    box-shadow:0 0 20px #d30000;
+	margin: 25px;
+	padding-left:25px;
+	padding-right:25px;
+    padding-bottom: 50px; 
+    padding-top: 0px;
+}
+
+.mainNav{
+    display: flex;
+	justify-content: center;
+    margin-top:10px; 
+    margin-bottom: 10px;
+}
+
+.mainEditTitle{
+    color: rgb(255, 255, 255);
+    text-shadow: 2px 2px 8px #bebebe;
+    font-family: "Lucida Console", monospace;
+    text-align:center; 
+    margin-bottom: 10px;
+}
+
+.mainTableColumn{
+    display: flex; 
+    flex-direction: column;
+}
+
+.mainTableRow{
+    display: flex; 
+    flex-direction:row; 
+    justify-content: space-evenly; 
+    flex-wrap: wrap;
+}
+
+.ASCenter{
+    align-self: center;
+}
+
+.mainScorePersonal{
+    border: 1px solid rgb(109, 0, 0);
+	padding:5px;
+	box-shadow: 0 0 5px #bd1515;
+	margin:20px;
+    text-align: center;
+}
+
+.WGCenter{
+    color: rgb(255, 255, 255);
+    text-shadow: 2px 2px 8px #bebebe;
+    font-family: "Lucida Console", monospace;
+    text-align: center;
+}
+
+.mainTable{
+    display: flex; 
+    flex-direction: row; 
+    flex-wrap: wrap; 
+    justify-content: center;
+}
+
+/*ui_register */
+.registerCenter{
+    text-align: center; 
+    margin-bottom: 5px; 
+    margin-top: 5px;
+}
+
+.registerBar{
+    width:100%; 
+    color:#d30000;
+}
+/* used multiple times*/
+
+.registerSelectDifficulty{
+    text-align: center; 
+    margin-bottom: 5px; 
+    margin-top: 5px;
+}
+
+.registerAge{
+    text-align: center; 
+    margin-bottom: 10px;
+}
+
+/*ui_play */
+
+/*ui_about */
+.aboutBody{
+    background-color: black;
+    display: flex;
+    border-radius:45px;
+    flex-direction: column;
+    flex-wrap: wrap;
+    flex-shrink: 1;
+    flex-grow:1;
+    align-self: center;
+    /* border: 1px solid white; */
+    -webkit-box-shadow:0 0 20px #d30000; 
+    -moz-box-shadow: 0 0 20px #d30000; 
+    box-shadow:0 0 20px #d30000;
+	margin: 25px;
+	padding-left:25px;
+	padding-right:25px;
+    padding-bottom: 30px; 
+    padding-top: 0px;
+}
+
+.glitchAltered{
+    color: rgb(212, 0, 0);
+    text-shadow: 2px 2px 8px #d30000;
+    font-weight: normal; 
+    font-family: Helvetica;
+}
+
+.whiteBar{
+    width:100%; 
+    color:white;
+}
+
+.whiteNoBottom{
+    color: rgb(255, 255, 255);
+    text-shadow: 2px 2px 8px #bebebe;
+    font-family: "Lucida Console", monospace;
+    margin-bottom: 0px;
+}
+
+.aboutDocContent5{
+	margin-top:0px; 
+	margin-left:10px;
+    margin-bottom: 5px;
+}
+
+/*ui_instruct */
+.instructContent{
+    display:flex; 
+    justify-content: center;
+}
+
+.instructionMain{
+    background-color: black;
+    display: flex;
+    border-radius:45px;
+    flex-direction: column;
+    flex-wrap: wrap;
+    flex-shrink: 1;
+    flex-grow:1;
+    align-self: center;
+    -webkit-box-shadow:0 0 20px #d30000; 
+    -moz-box-shadow: 0 0 20px #d30000; 
+    box-shadow:0 0 20px #d30000;
+	margin: 25px;
+	padding-left:25px;
+	padding-right:25px;
+
+    min-width:95%; 
+    padding-bottom: 50px; 
+    padding-top: 0px;
+}
+
+.noTop{
+    margin-top:0px;
+}
+
+.instructLBT0{
+    margin-left:10px; 
+    margin-bottom: 0px; 
+    margin-top:0px
+}
+
+.instructLBT5{
+    margin-left:10px; 
+    margin-bottom: 0px; 
+    margin-top:5px;
+}
+
+.instructBT{
+    margin-bottom: 0px; 
+    margin-top:0px
+}
+
+.instructTop{
+    margin-top:25px
+}
+
+/*ui_pause */
+.bottom10{
+    margin-bottom: 10px; 
+}
+
+.pauseGlitch{
+    color: rgb(212, 0, 0);
+    text-shadow: 2px 2px 8px #d30000;
+    font-family: "Lucida Console", monospace;
+    font-weight: 900;
+    margin-bottom: 0px; 
+    margin-top: 5px;
+    font-size: 50px;
+}
+
+.pauseMain{
+    /* allows it to be on top of others VVV */
+	position: absolute;
+
+	background-color: black;
+    display: flex;
+	/* for somereason just doing height and width will not work */
+	max-width: 40%;
+	min-width: 40%;
+    top:30%;
+    justify-self: center;
+    border-radius:45px;
+    flex-direction: column;
+    flex-wrap: wrap;
+    flex-shrink: 1;
+    flex-grow:1;
+    align-self: center;
+    /* border: 1px solid white; */
+    -webkit-box-shadow:0 0 20px #d30000; 
+    -moz-box-shadow: 0 0 20px #d30000; 
+    box-shadow:0 0 20px #d30000;
+	padding-top:10px;
+	padding-bottom:10px;
+	padding-left:25px;
+	padding-right:25px;
+    text-align: center;
+}
+
+/*ui_gameOver */
+.glitchCenter{
+    color: rgb(212, 0, 0);
+    text-shadow: 2px 2px 8px #d30000;
+    font-family: "Lucida Console", monospace;
+    font-weight: 900;
+    text-align: center;
+}
+
+.gameOverButtons{
+	display: flex;
+	justify-content: center;
+    margin-top:10px;
+}
+
+/*ui_inGame */
+.gameHudTL{
+    position: absolute;
+    top: 0; 
+    left: 0;
+}
+
+.gameHudTR{
+    position: absolute;
+    top: 0; 
+    right: 0;
+}
+
+.gameHudBL{
+    position: absolute;
+    bottom: 0; 
+    left: 0;
+}
+
+.gameHudBR{
+    position: absolute;
+    bottom: 0; 
+    right: 0;
+}
+
+.gameHudPadding{
+background-color: black;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    flex-shrink: 1;
+    flex-grow:1;
+    align-self: center;
+    /* border: 1px solid white; */
+    -webkit-box-shadow:0 0 20px #d30000; 
+    -moz-box-shadow: 0 0 20px #d30000; 
+    box-shadow:0 0 20px #d30000;
+    padding:20px; 
+    padding-right:30px;
+}
+
+.showGame{
+display:flex;
+justify-content: center;
+}
+
+/* only for header so i can click stuff */
+.mainHeaderClick{
+    text-align: center;
+    background: -webkit-linear-gradient(#eee, rgb(143, 143, 143));
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: left; 
+    margin-bottom: 5px;
+
+}
+
+.glitchHeader{
+    color: rgb(212, 0, 0);
+    text-shadow: 2px 2px 8px #d30000;
+    font-family: "Lucida Console", monospace;
+    font-weight: 900;
+}
+
+.aboutHeaderClick{
+    margin-left: 50px;
+	cursor: pointer;
+}

@@ -1,0 +1,15 @@
+Goals:
+How to establish a connection between Wordpress, our code and the Database
+How to search for pdfs in the database from our code and using the Wordpress framework
+
+How to establish a connection between Wordpress, our code and the Database:
+Using wpdb this class is used to interact with a database without needing to use raw SQL statement, For more information see https://developer.wordpress.org/reference/classes/wpdb/ 
+
+How to search for pdfs in the database from our code and using the Wordpress framework:
+See these resources:
+How to fetch Data in WordPress using MySQLi or $wpdb: https://wordpress.stackexchange.com/questions/233086/how-to-fetch-data-in-wordpress-using-mysqli-or-wpdb
+Interaction with the wordpress database: https://www.smashingmagazine.com/2011/09/interacting-with-the-wordpress-database/
+Use MySQL BLOB column with PHP to store PDF file :https://medium.com/an-idea/use-mysql-blob-column-with-php-to-store-pdf-file-13f4277b68c3
+Downloading Files From MySQL Database: https://web.archive.org/web/20110105075602/http://www.php-mysql-tutorial.com/wikis/mysql-tutorials/uploading-files-to-mysql-database.aspx
+How to Save Data in Wordpress Database: https://wpforms.com/how-to-save-your-contact-form-data-in-wordpress-database/
+

@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta HTTP-EQUIV="EXPIRES" CONTENT="-1">
+		<link rel="stylesheet" type="text/css" href="static_style.css" />
+		<script src="jquery-3.5.1.min.js"></script>
+		<script language="javascript" src="model.js" > </script>
+		<script language="javascript" src="controller.js" > </script>
+		<style>
+			#ui_login { display:block; }
+			#ui_register {display: none;}
+			#ui_play { display:none; }
+		</style>
+		<title>survIvE</title>
+
+		<script>
+			function resizeCanvas() {
+				var canvs = document.getElementById("stage");
+				canvs.width = window.innerWidth*0.99;
+				canvs.height = window.innerHeight*0.99;
+				//if debug console is up while logging in, removing it in play causes weird dimensions
+			}
+		</script>
+
+	</head>
+	<body bgcolor="ffffff" onload="resizeCanvas();">
+	<div id='displayError' style="top:2%; right:2%; position: absolute;"></div>
+
+	<div id="ui_login">
+		<p class='glitch'>01000001 01010101 01000100 01001001 01010100 01001111 01010010</p>
+		<div class="loginStyle">
+			<div class="deco1">
+				<p class="glitch">IMPROBABLE</p>
+				<p class="vertical">SUBJECT.ACCESS(KS_FRAG10).GRANT(ALLOW,PERMIT,PURGE);</p>
+				<p class="glitch">ADAPT</p>
+			</div>
+			<section class="Intro" >			
+				<div class='IntroHeader'>
+					<h1 class='Welcome'style='margin-bottom: 0px;'>Welcome to: <br>PROJECT survIvE</h1>
+				</div>
+				<span class='glitch' style='margin-bottom: 10px; text-align: center;'>CRUSH, ADAPT, PERFECT, SURVIVE</span>
+					<br>
+				<div style='text-align:center;'>
+					Please enter credentials below:
+				</div>
+				<!-- turn this into a form???? make it post???-->
+				<div id='loginForm' class='IntroContent'>
+					<input type="text" id="username" placeholder="User Name" class="textInput" required='required'/>
+					<input type="password" id="password" placeholder="Password" class="textInput" required='required'/>	
+					<div class='buttonHolder'>
+						<input type="submit" id="loginSubmit" class="introSubL" value="Login">
+						<input type="button" id="loginRegister" class="introSubR" value="Register">
+					</div>
+			    </div>
+			</section>
+			<div class="deco2">
+				<p class="vertical">01000011 01001100 01001111 01010111 01001110</p>
+				<p class="glitch">[REDACTED]</p>
+				<p class="glitch"><br><br>EXPURGATION.INIT</p>
+				
+			</div>
+		</div>
+		<p class="glitch" style="text-align:right;">01110111 01101000 01111001</p>
+
+	</div>
+
+	<div id="ui_main" class="mainHolder">
+		<div id='headerSuriveMain' class="aboutHeader">
+			<h2 class='IntroHeader' style='text-align: left; margin-bottom: 5px;'>Project survIvE</h2> 
+			<span class='glitch' >CRUSH, ADAPT, PERFECT, SURVIVE</span>
+		</div>
+
+		<div class="aboutProject" style='padding-bottom: 50px; padding-top: 0px;'>
+			<h1 class='pageTopBar'><span class="whiteGlitch">MAIN</span></h1>
+			<div class='buttonHolder' style='margin-top:10px; margin-bottom: 10px;'>
+				<input type="button" id="mainNavMain" class="introSubL" value="Main">
+				<input type="button" id="mainNavAbout" class="introSubCenter" value="About">
+				<input type="button" id="mainNavPlay" class="introSubCenter" value="Play">
+				<input type="button" id="mainNavInstructions" class="introSubCenter" value="Instructions">
+				<input type="button" id="mainNavLogout" class="introSubR" value="Logout">
+				
+			</div>
+			
+			
+			<div class='mainContent'>
+				<!-- this used to be a form but i turned it into a div -->
+				<form id='editForm' class='editProfile'>
+					<div class='whiteGlitch' style='text-align:center; margin-bottom: 10px;'>
+						Edit Existing Subject
+					</div>
+						<!-- TODO check if this verification works -->
+						<input type="text" id="editUsername" placeholder="User Name" class="textInput" required="required"/>
+						<input type="text" id="editNewUsername" placeholder="New User Name" class="textInput" required="required"/>
+						<input type="password" id="editPassword" placeholder="Password" class="textInput" required="required"/>
+						<input type="password" id="editNewPassword" placeholder="New Password" class="textInput" required="required"/>
+						<input type="password" id="editConfirmPassword" placeholder="Confirm New Password" class="textInput" required="required"/>
+						
+						<p style='text-align: center; margin-bottom: 5px; margin-top: 5px;'>Select a Class</p>
+						<div class = 'buttonHolder'>
+							<input type="radio" id="editAgent" name="editType" value="Agent" required='required'>
+							<label for="agentRegister">Agent</label><br>
+
+							<input type="radio" id="editTricky" name="editType" value="Tricky">
+							<label for="trickyRegister">Tricky</label><br>
+
+							<input type="radio" id="editSoldier" name="editType" value="Soldier">
+							<label for="soldierRegister">Soldier</label><br>
+
+							<input type="radio" id="editAssassin" name="editType" value="Assassin">
+							<label for="assassinRegister">Assassin</label><br>
+						</div>
+
+						<hr style="width:100%; color:#d30000;">
+
+						<p style='text-align: center; margin-bottom: 5px; margin-top: 5px;'>Select a Difficulty</p>
+						<select id='editDifficulty' class = 'textInput'>
+							<option id='editEasy' value="0">Easy</option>
+							<option id='ediMedium' value="1">Medium</option>
+							<option id='ediHard' value="2">Hard</option>
+						</select>
+						
+						<hr style="width:100%; color:#d30000;">
+						
+						<div style='text-align: center; margin-bottom: 10px;'>
+							Input your age(14+):<br>
+							<input type="number" id='editAge' name='age' min='14' max='120' class='textInput' required='required'>
+						</div>
+						<div class='buttonHolder'>
+							<!-- replaced login with cancel -->
+							<input type="submit" id="editSubmit" class="introSub" value="Edit Profile">
+						</div>
+				</form>
+				<div style='display: flex; flex-direction: column;'>
+					<div style='display: flex; flex-direction:row; justify-content: space-evenly; flex-wrap: wrap;'>
+						<div stle='display:flex; flex-direction column;'>
+						<h1 class='whiteGlitch'>Navigation</h1>
+						<p style='align-self: center;'>
+							
+								Main: Edit profile, Statistics<br>
+								About: Lore, Classes, Enemies <br>
+								Instructions: Controls, Guns<br>
+						</p>
+						</div>
+						<table id="scoreTablePersonal" class='scoreTable' style='text-align: center;'>
+							<caption class='whiteGlitch' style='margin-bottom: 10px;'>Personal Scores</caption>
+							<tr>
+								<td><strong>Top Score</strong></td> 
+								<td><strong>Kills</strong></td>
+								<td><strong>Best Time</strong></td>
+							</tr>
+								
+							<tr>
+								<td id='personalScore'>0</td>
+								<td id='personalKills'>0</td>
+								<td id='personalTime'>00:00</td>
+							</tr>
+						</table>
+					</div>
+					<div style='display: flex; flex-direction: row; flex-wrap: wrap; justify-content: center;'>
+						<div id='tableContainer1'>
+							<p class="whiteGlitch" style='text-align: center;'>Top Scorers</p>
+							<table id="scoreTableScores" class='scoreTable' style='text-align: center;'>
+								<tr>
+									<td><strong>Rank</strong></td> 
+									<td><strong>Score</strong></td>
+									<td><strong>Name</strong></td>
+								</tr>
+									
+								<tr>
+									<td>1</td>
+									<td id='score1'></td>
+									<td id='nameScore1'></td>
+								</tr>
+								
+								<tr>
+									<td>2</td>
+									<td id='score2'></td>
+									<td id='nameScore2'></td>
+								</tr>
+								
+								<tr>
+									<td>3</td>
+									<td id='score3'></td>
+									<td id='nameScore3'></td>
+								</tr>
+							</table>
+						</div>
+						<div id='tableContainer2'>
+							<p class="whiteGlitch" style='text-align: center;'>Top Killers</p>
+							<table id="scoreTableKills" class='scoreTable' style='text-align: center;'>
+								<tr>
+									<td><strong>Rank</strong></td> 
+									<td><strong>Kills</strong></td>
+									<td><strong>Name</strong></td>
+								</tr>
+									
+								<tr>
+									<td>1</td>
+									<td id='kills1'>5</td>
+									<td id='nameKills1'></td>
+								</tr>
+								
+								<tr>
+									<td>2</td>
+									<td id='kills2'>4</td>
+									<td id='nameKills2'></td>
+								</tr>
+								
+								<tr>
+									<td>3</td>
+									<td id='kills3'></td>
+									<td id='nameKills3'></td>
+								</tr>
+							</table>
+						</div>
+						<div id='tableContainer3'>
+							<p class="whiteGlitch" style='text-align: center;'>Top Survivors</p>
+							<table id="scoreTableSurvive" class='scoreTable' style='text-align: center;'>
+								<tr>
+									<td><strong>Rank</strong></td> 
+									<td><strong>Time</strong></td>
+									<td><strong>Name</strong></td>
+								</tr>
+									
+								<tr>
+									<td>1</td>
+									<td id='survive1'></td>
+									<td id='nameSurvive1'></td>
+								</tr>
+								
+								<tr>
+									<td>2</td>
+									<td id='survive2'></td>
+									<td id='nameSurvive2'></td>
+								</tr>
+								
+								<tr>
+									<td>3</td>
+									<td id='survive3'></td>
+									<td id='nameSurvive3'></td>
+								</tr>
+							</table>
+						</div>
+					</div>
+					<div class='buttonHolder'>
+						<input type="button" id="mainPlay" class="playButton" value="PLAY">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+		
+	<div id="ui_register">
+			<p class='glitch'>01000001 01010101 01000100 01001001 01010100 01001111 01010010</p>
+		<div class="loginStyle">
+			<div class="deco1">
+				<p class="glitch">IMPROBABLE</p>
+				<p class="vertical">SUBJECT.ACCESS(KS_FRAG10).GRANT(ALLOW,PERMIT,PURGE);</p>
+				<p class="glitch">ADAPT</p>
+			</div>
+			<section class="Intro">			
+				<div class='IntroHeader'>
+					<h1 class='Welcome'style='margin-bottom: 0px;'>Welcome to: <br>PROJECT survIvE</h1>
+				</div>
+				<span class='glitch' style='margin-bottom: 10px; text-align: center;'>CRUSH, ADAPT, PERFECT, SURVIVE</span>
+					<br>
+				<div style='text-align:center;'>
+					Register new Subject
+				</div>
+				<!-- this used to be a form but i turned it into a div -->
+				<form id='registerForm' class='IntroContent'>
+					<!-- TODO check if this verification works -->
+					<input type="text" id="registerUsername" placeholder="User Name" class="textInput" required="required"/>
+					<input type="password" id="registerPassword" placeholder="Password" class="textInput" required="required"/>
+					<input type="password" id="registerConfirmPassword" placeholder="Confirm Password" class="textInput" required="required"/>
+					
+					<p style='text-align: center; margin-bottom: 5px; margin-top: 5px;'>Select a Class</p>
+					<div class = 'buttonHolder'>
+						<input type="radio" id="registerAgent" name="Type" value="Agent" required='required'>
+						<label for="agentRegister">Agent</label><br>
+
+						<input type="radio" id="registerTricky" name="Type" value="Tricky">
+						<label for="trickyRegister">Tricky</label><br>
+
+						<input type="radio" id="registerSoldier" name="Type" value="Soldier">
+						<label for="soldierRegister">Soldier</label><br>
+
+						<input type="radio" id="registerAssassin" name="Type" value="Assassin">
+						<label for="assassinRegister">Assassin</label><br>
+					</div>
+
+					<hr style="width:100%; color:#d30000;">
+
+					<p style='text-align: center; margin-bottom: 5px; margin-top: 5px;'>Select a Difficulty</p>
+					<select id='registerDifficulty' class = 'textInput'>
+						<option id='registerEasy' value="0">Easy</option>
+						<option id='registerMedium' value="1">Medium</option>
+						<option id='registerHard' value="2">Hard</option>
+					</select>
+					
+					<hr style="width:100%; color:#d30000;">
+					
+					<div style='text-align: center; margin-bottom: 10px;'>
+						Input your age(14+):
+						<input type="number" id='registerAge' name='age' min='14' max='120' class='textInput' required='required'>
+					</div>
+					
+					<div class='buttonHolder'>
+						<!-- replaced login with cancel -->
+						<input type="button" id="registerCancel" class="introSubL" value="Cancel">
+						<input type="submit" id="registerSubmit" class="introSubR" value="Register">
+					</div>
+			    </form>
+			</section>
+			<div class="deco2">
+				<p class="vertical">01000011 01001100 01001111 01010111 01001110</p>
+				<p class="glitch">[REDACTED]</p>
+				<p class="glitch"><br><br>EXPURGATION.INIT</p>
+			</div>
+		</div>
+		<p class="glitch" style="text-align:right;">01110111 01101000 01111001</p>
+	</div>
+	<div id="ui_play" >
+		<center>
+			<canvas id="stage" width="800" height="800" style="border:1px solid black;"> </canvas>
+		</center>
+	</div>
+
+	<div id="ui_nyi">
+		<h1>[ERROR] <br> HOW ARE YOU HERE???!?!</h1>
+		<input type="button" id="cancel1" value="Cancel" class='introSub'>
+	</div>
+
+	<div id="ui_about" class='aboutHolder'>
+		<div id='headerSuriveAbout' class="aboutHeader">
+			<h2 class='IntroHeader' style='text-align: left; margin-bottom: 5px;'>Project survIvE</h2> 
+			<span class='glitch' >CRUSH, ADAPT, PERFECT, SURVIVE</span>
+		</div>
+
+		<div class='aboutContent'>
+			<div class='aboutProject' style='padding-bottom: 30px; padding-top: 0px;'>
+				<h1 class='pageTopBar'><span class="whiteGlitch">ABOUT</span></h1>
+				<div class='buttonHolder' style='margin-top:10px; margin-bottom: 20px;'>
+					<input type="button" id="aboutNavMain" class="introSubL" value="Main">
+					<input type="button" id="aboutNavAbout" class="introSubCenter" value="About">
+					<input type="button" id="aboutNavPlay" class="introSubCenter" value="Play">
+					<input type="button" id="aboutNavInstructions" class="introSubCenter" value="Instructions">
+					<input type="button" id="aboutNavLogout" class="introSubR" value="Logout">
+					
+				</div>
+				<h3 class='whiteGlitch'>==Project Information==</h3>
+				<p>
+					<strong>Project survIvE:</strong><br>
+					A series of military R&D projects spearheaded by the SEDERA branch of Nevada's MAD (Mutagenic Arms Defence) unit.
+				</p>
+				<p>
+					<strong>Goal:</strong><br>
+					Create generations of physically, genetically, technologically, and mentally superior 
+					supersoldiers as a special fighting force within the MAD unit. 
+				</p>
+				<p>
+					<strong>Concept:</strong><br>
+					Originally developed by Doctors Arnold Rosenbloom and Sadia Sharmin in the late 20th century, survIvE's 
+					initial protocols were developed to train the Headhunter division of 
+					<span class='glitch' style="font-weight: normal; font-family: Helvetica;">[REDACTED]</span>. 
+					After the invention of the Improbability Drive by the CS (Counter Strike) Organization, the need for forces about to counter 
+					reality bending was at an all time high. Through several decades of testing, optimal methods were found and 
+					implemented - resulting in the current iteration of survIve. 
+					<!-- The current methods of experimentation and development 
+					are currently against several world laws. This is deemed neccesary. Fight for the greater good. Reject your morality. 
+					Survive, above all else. -->
+				</p>
+				<p>
+					<strong>Current Program:</strong><br>
+					The current program makes use of four types of genetically engineered soldiers, known as 'Subjects'. 
+					<!-- These Subjects are thrown into an arena and told to 'Do what comes naturally'.  -->
+					Within the battlezone are obstacles, enemies, and weaponry for the subject to interact with.
+					The large number of hostile forces teleported in and armed with weapons, effectively
+					creates a <span class='glitch' style="font-weight: normal; font-family: Helvetica;">One Against Everyone</span> scenario, which
+					is ideal for our purposes. Ideally, the Subject would then attempt to eradicate any hostile forces in the area.
+					<!-- Enemy creatures should not be interacted with outside the Project battlezone. 
+					<span class='glitch' style="font-weight: normal; font-family: Helvetica;">You do not recognize them.</span>  -->
+					Upon Subject success or termination, the Subject is taken in and their 
+					memories are quickly harvested and stored in our database - where their performance can be analyzed and applied to further 
+					our development efforts.
+				</p>
+				<p>
+					<strong>Martin-Kay Lethality Score:</strong><br>
+					To measure the performance of Subjects the Martin-Kay Lethality Score, or 
+					simply <span class='glitch' style="font-weight: normal; font-family: Helvetica;">Score</span> for short, was developed. Score allows
+					one to agregate all the relevant qualities that dictate an individual's lethality and place it into a numerical value. The unit was
+					named after two subjects that performed so well as to cause scientists to question the very concept of lethality.
+				</p>
+				<hr style="width:100%; color:white;">
+				<h3 class='whiteGlitch' style='margin-bottom: 0px;'>==Subject Information==</h3>
+				<p class="glitch">LEVEL 2 CLEARANCE REQUIRED</p>
+
+				<p class='aboutDocumentEntry'>
+					<strong>Subject Class: ASU204 - "Agent":</strong><br>
+					
+					<p class='aboutDocumentContent' style='margin-bottom: 5px;'>
+						Description: Super soldier exceling in all fields, created through <span class='glitch' style="font-weight: normal; font-family: Helvetica;">[REDACTED]</span>. 
+						Has modified circulatory systems that allow an Adrenaline Rush.
+					</p>
+					<p class='aboutDocumentContent'>
+						Ability: The procedures done to Agents gives them a short speed boost when they experience an Adrenaline Rush.
+					</p>
+					
+				</p>
+				<p class='aboutDocumentEntry'>
+					<strong>Subject Class: ITU046- "Tricky":</strong><br>
+					<p class='aboutDocumentContent' style='margin-bottom: 5px;'>
+						Description: An anomaly created through successful trials of experiment MD-N5. 
+						Able to teleport short distances. No other description allowed.<br>
+					</p>
+					<p class='aboutDocumentContent'>
+						Ability: A minor reality bender, the Tricky can displace themselves a significant distance away in an instant.
+					</p>
+					
+				</p>
+				<p class='aboutDocumentEntry'>
+					<strong>Subject Class: SEU106 - "Soldier":</strong><br>
+					<p class='aboutDocumentContent' style='margin-bottom: 5px;'>
+					Description: AWOL Trained soldier. Subject type provided by Military as punishment for desertion. Skilled with explosives.
+					Carries explosives.<br>
+					</p>
+					<p class='aboutDocumentContent'>
+						Ability: With their military training, the Soldier can detonate an explosive at their location without any self damage.
+					</p>
+				</p>
+				<p class='aboutDocumentEntry'>
+					<strong>Subject Class: MLU008 - "Mutant":</strong><br>
+					<p class='aboutDocumentContent' style='margin-bottom: 5px;'>
+					The first type of test subject devised at site 
+					<span class='glitch' style="font-weight: normal; font-family: Helvetica;">[REDACTED]</span>.
+					Driven mad and insane by the procedures performed on him. Possesses unusual bodily growths.
+					</p>
+					<p class='aboutDocumentContent'>
+						Ability: Able to extend a tendril, but has less mobility while doing so.<br>
+					</p>
+				</p>
+				<hr style="width:100%; color:white;">
+				<h3 class='whiteGlitch' style='margin-bottom: 0px;'>==Force Information==</h3>
+				<p class="glitch">LEVEL 5 CLEARANCE REQUIRED</p>
+				<p class='aboutDocumentEntry'>
+					<strong>MAD Delta 6 - "Seekers":</strong><br>
+					<p class='aboutDocumentContent' style='margin-bottom: 5px;'>
+						Description: A facility trained offense unit, part of Squad D6. 
+					</p>
+					<p class='aboutDocumentContent'>
+						Behaviour: Constantly pursues the subject, capable of using multiple weapons.
+					</p>
+				</p>
+
+				<p class='aboutDocumentEntry'>
+					<strong>MAD Psi 5 - "Archers":</strong><br>
+					<p class='aboutDocumentContent' style='margin-bottom: 5px;'>
+					Description: Special operatios unit sniper from Squad P5.
+					</p>
+					<p class='aboutDocumentContent'>
+						Behaviour: Stands still and engages the Subject from long ranges with piercing rifles.
+					</p>
+				</p>
+				<p class='aboutDocumentEntry'>
+					<strong>MAD CV - "Bystanders":</strong><br>
+					<p class='aboutDocumentContent' style='margin-bottom: 5px;'>
+					Description: A <span class='glitch' style="font-weight: normal; font-family: Helvetica;">[REDACTED]</span>
+					thrown into the arena as punishment for failure.
+					</p>
+					<p class='aboutDocumentContent'>
+						Behaviour: Flees from Subject, will engage if a firearm is provided.
+					</p>
+				</p>
+				<div class='buttonHolder'>
+					<input type="button" id="aboutPlay" class="playButton" value="PLAY">
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="ui_instruct" class='instructHolder'>
+		
+		<div id='headerSuriveInstruction' class="aboutHeader">
+			<h2 class='IntroHeader' style='text-align: left; margin-bottom: 5px;'>Project survIvE</h2> 
+			<span class='glitch' >CRUSH, ADAPT, PERFECT, SURVIVE</span>
+		</div>
+
+		<div class='aboutContent' style='display:flex; justify-content: center;'>
+			<div class='aboutProject' style='min-width:95%; padding-bottom: 50px; padding-top: 0px;'>
+				<h1 class='pageTopBar'><span class="whiteGlitch">INSTRUCTIONS</span></h1>
+				<div class='buttonHolder' style='margin-top:10px; margin-bottom: 20px;'>
+					<input type="button" id="instructionNavMain" class="introSubL" value="Main">
+					<input type="button" id="instructionNavAbout" class="introSubCenter" value="About">
+					<input type="button" id="instructionNavPlay" class="introSubCenter" value="Play">
+					<input type="button" id="instructionNavInstructions" class="introSubCenter" value="Instructions">
+					<input type="button" id="instructionNavLogout" class="introSubR" value="Logout">
+					
+				</div>
+				<h3 class='whiteGlitch' style='text-align: center;'>==Subject Instructions==</h3>
+				<p style="margin-top:0px;">
+					<strong>Controls:</strong><br>
+					<p style="margin-left:10px; margin-bottom: 0px; margin-top:0px">
+						Movement: 
+						<span class="glitch">W</span>,
+						<span class="glitch">A</span>,
+						<span class="glitch">S</span>,
+						<span class="glitch">D</span> 
+						to move 
+						<span class="glitch">UP</span>,
+						<span class="glitch">LEFT</span>,
+						<span class="glitch">DOWN</span>,
+						<span class="glitch">RIGHT</span>.
+					</p>
+					<br>
+					<p style="margin-left:10px; margin-bottom: 0px; margin-top:5px;">
+						Aim & Shoot: Use the 
+						<span class="glitch">Mouse</span> to 
+						<span class="glitch">Aim</span> and the 
+						<span class="glitch">Left Click</span> to 
+						<span class="glitch">Shoot</span>.
+					</p>
+					<br>
+					<p style="margin-left:10px; margin-bottom: 0px; margin-top:5px;">
+						Class Ability: Press 
+						<span class="glitch">E</span> to use your  
+						<span class="glitch">Class Ability</span>.
+					</p>
+				</p>
+				<p>
+					<strong>Goal:</strong><br>
+					<p style="margin-left:10px; margin-bottom: 0px; margin-top:5px;">
+						Eliminate all threats in the arena. As you kill, your <span class="glitch">Score</span> increases. Make it high.
+						No regrets. No remorse. You must <span class="glitch">Survive</span>.
+					</p>
+				</p>
+				<p>
+					<strong>Miscellaneous Items:</strong><br>
+					<p style="margin-left:10px; margin-bottom: 0px; margin-top:5px;">
+						Scattered around the battle field are obstacles and supplies. <br>
+						Some may give you points when destroyed. Some may provide cover.
+						<br>
+						Others carry supplies you can use. Be careful, your enemies can use these supplies as well.
+					</p>
+				</p>
+				<p>
+					<strong>Crates:</strong><br>
+					<p style="margin-left:10px; margin-bottom: 0px; margin-top:5px;">
+						Blue: Destructible crates that provide score when destroyed.<br>
+						Black: Incredibly durable obstacles that serves as cover.<br>
+						White: Omni-crate that heals Subject and refills ammo.<br>
+						Green: Healing crate.<br>
+						Brown: Ammo crate.<br>
+						Grey: Weapon crate with a random weapon.<br>
+					</p>
+				</p>
+				<h3 class='whiteGlitch' style='text-align: center;'>==Firearm Information==</h3>
+				<!-- begin guns -->
+				<p style="margin-bottom: 0px; margin-top:0px;">
+					<strong>M29 Defence Weapon - "Pistol"</strong>
+					<p style="margin-left:10px; margin-bottom: 0px; margin-top:0px;">
+						A semiautomatic defence weapon. Strong but not overpowering.
+					</p>
+				</p>
+				<p style="margin-bottom: 0px; margin-top:0px;">
+					<strong>M03 Assault Rifle - "Rifle"</strong>
+					<p style="margin-left:10px; margin-bottom: 0px; margin-top:0px;">
+						A fully automatic rifle with a high fire rate.
+					</p>
+				</p>
+				<p style="margin-bottom: 0px; margin-top:0px;">
+					<strong>L01 Conduction Platform - "Railgun"</strong>
+					<p style="margin-left:10px; margin-bottom: 0px; margin-top:0px;">
+						Home developed long range, high firepower weapons platform.
+					</p>
+				</p>
+				<p style="margin-bottom: 0px; margin-top:0px;">
+					<strong>T07 Caustic Blaster - "Shotgun"</strong>
+					<p style="margin-left:10px; margin-bottom: 0px; margin-top:0px;">
+						Illegal weapon that fires spreads of projectiles made of toxic waste.
+					</p>
+				</p>
+				<p style="margin-bottom: 0px; margin-top:0px;">
+					<strong>E10 Condenser - "Quantum Annihilator"</strong>
+					<p style="margin-left:10px; margin-bottom: 0px; margin-top:0px;">
+						Experimental weapon. Shoots Singularities. May destroy reality.
+					</p>
+				</p>
+				<!-- end guns -->
+				<!-- <div class="footerNav">
+					<input type="button" id="cancelInstruct" value="Cancel" class='introSub'>
+				</div> -->
+				<div class='buttonHolder'>
+					<input type="button" id="instructionPlay" class="playButton" value="PLAY">
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+	<div id="ui_pause" class='pauseHolder' style="text-align: center;">
+		<!-- retry, logout, nav to other things -->
+		<h3 class='glitch' style='margin-bottom: 0px; margin-top: 5px;font-size: 50px;'>PAUSED</h3>	
+		<p>
+			<strong>Controls:</strong><br>
+			<p style="margin-left:10px; margin-bottom: 0px; margin-top:0px">
+				Movement: 
+				<span class="glitch">W</span>,
+				<span class="glitch">A</span>,
+				<span class="glitch">S</span>,
+				<span class="glitch">D</span> 
+				to move 
+				<span class="glitch">UP</span>,
+				<span class="glitch">LEFT</span>,
+				<span class="glitch">DOWN</span>,
+				<span class="glitch">RIGHT</span>.
+			</p>
+			<br>
+			<p style="margin-left:10px; margin-bottom: 0px; margin-top:5px;">
+				Aim & Shoot: Use the 
+				<span class="glitch">Mouse</span> to 
+				<span class="glitch">Aim</span> and the 
+				<span class="glitch">Left Click</span> to 
+				<span class="glitch">Shoot</span>.
+			</p>
+			<br>
+				<p style="margin-left:10px; margin-bottom: 0px; margin-top:5px;">
+					Class Ability: Press 
+					<span class="glitch">E</span> to use your  
+					<span class="glitch">Class Ability</span>.
+				</p>
+		</p>
+
+	
+	<div style='margin-bottom: 10px;'>
+		<strong>Game Statistics:</strong><br>
+		<div>
+			Kills:
+			<input type="text" id='pauseKills' class='gameOverText' placeholder="42069" >
+		</div>
+		<div>
+			Time:
+			<input type="text" id='pauseTime' class='gameOverText' placeholder="420:69">
+		</div>
+		<div>
+			Score:
+			<input type="text" id='pauseScore' class='gameOverText' placeholder="42069">
+		</div>
+	</div>
+
+	</div>
+
+	<div id="ui_gameOver" class='gameOverHolder'>
+		<h3 class='glitch' style='text-align: center;'>
+			Subject Perished
+		</h3>
+		<h3 style='text-align: center;'>"Retrieve the remains.<br>We must continue."</h3>
+		<div>
+			Kills:
+			<input type="text" id='gameOverKills' class='gameOverText' value="0" readonly>
+		</div>
+		<div>
+			Time:
+			<input type="text" id='gameOverTime' class='gameOverText' value="0:00" readonly>
+		</div>
+		<div>
+			Score:
+			<input type="text" id='gameOverScore' class='gameOverText' value="0" readonly>
+		</div>
+		<div class='buttonHolder' style="margin-top:10px;">
+			<input type="button" id="gameOverRetry" class="introSubL" value="Play gain">
+			<input type="button" id="gameOverLogOut" class="introSubR" value="Log Out">
+		</div>
+	</div>
+
+	
+	<!-- ammo and stuff is bottom right -->
+	<div id="ui_inGame">
+		<div class="gameUIHolder" style='top: 0; left: 0;'> 
+			<div id='gamebar1' class='gameUIVisual' style="padding:20px; padding-right:30px;">
+				<p>
+					<span class="glitch">HEALTH:</span>
+					<span id='liveHealth' class="whiteGlitch">100</span>
+				</p>
+				
+				<p>
+					<span class="glitch">ABILITY:</span>
+					<span id='liveAbility' class="whiteGlitch">ON</span>
+				</p>
+			</div>
+		</div>
+		<div class="gameUIHolder" style='bottom: 0; left: 0;'> 
+			<div id='gamebar2' class='gameUIVisual' style="padding:20px; padding-right:30px;">
+				<p>
+					<span class="glitch">WEAPON:</span>
+					<span id='liveWeapon' class="whiteGlitch">N/A</span>
+				</p>
+				<p>
+					<span class="glitch">AMMO:</span>
+					<span id='liveAmmo' class="whiteGlitch">0</span>
+				</p>
+			</div>
+		</div>
+
+		<div class="gameUIHolder" style='bottom: 0; right: 0;'>
+			<div id='gamebar3' class='gameUIVisual' style="padding:20px; padding-right:30px;">
+				<p>
+					<span class="glitch">SCORE:</span>
+					<span id='liveScores' class="whiteGlitch">0</span>
+				</p>
+				<p>
+					<span class="glitch">KILLS:</span>
+					<span id='liveKills' class="whiteGlitch">0</span>
+				</p>
+				<p>
+					<span class="glitch">TIME:</span>
+					<span id='liveTime' class="whiteGlitch">00:00</span>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	</body>
+</html>

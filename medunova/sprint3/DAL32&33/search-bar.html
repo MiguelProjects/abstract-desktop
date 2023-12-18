@@ -1,0 +1,362 @@
+<!-- Actual Code is on wordpress, and a lot more changes were made there... end result copy pasted here -->
+
+
+<?php 
+
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+    <meta charset="utf-8">
+    <script type='text/javascript' src=" jquery-3.5.1.min.js"></script>
+    <style>
+p.speech {
+  position: relative !important;
+  max-width: 180px !important;
+  // this is 180 because the padding makes it 180+ 10 + 10
+  text-align: left !important;
+  color: white !important;
+  font-family: Arial, Helvetica, sans-serif !important;
+  line-height: 25px !important;
+  background-color: rgb(88,84,188) !important;
+  border: 12px solid rgb(88,84,188) !important;
+  -webkit-border-radius: 30px !important;
+  -moz-border-radius: 30px !important;
+  border-radius: 30px !important;
+  //-webkit-box-shadow: 2px 2px 4px #888 !important;
+  //-moz-box-shadow: 2px 2px 4px #888 !important;
+  //box-shadow: 2px 2px 4px #888 !important;
+  
+  margin-top:10px !important;
+  margin-right: 50px !important;
+  margin-bottom: auto !important;
+  margin-left: auto !important;
+  padding-left: 10px !important;
+  padding-right:10px !important;
+}
+
+p.speech:before {
+  content: " " !important;
+  width: 0px !important;
+  height: 0px !important;
+  position: absolute !important;
+  border: 20px solid !important;
+  border-color: rgb(88,84,188) transparent transparent rgb(88,84,188) !important;
+  right: -38px !important;
+  top: -5px !important;
+}
+
+p.answer{
+  position: relative !important;
+  max-width: 180px !important;
+  text-align: left !important;
+  color: white !important;
+  font-family: Arial, Helvetica, sans-serif !important;
+  line-height: 25px !important;
+  background-color: grey !important;
+  border: 12px solid grey !important;
+  -webkit-border-radius: 30px !important;
+  -moz-border-radius: 30px !important;
+  border-radius: 30px !important;
+  //-webkit-box-shadow: 2px 2px 4px #888 !important;
+  //-moz-box-shadow: 2px 2px 4px #888 !important;
+  //box-shadow: 2px 2px 4px #888 !important;
+  
+  margin-top:10px !important;
+  margin-right:auto !important;
+  margin-left: 50px !important;
+  margin-bottom: auto !important;
+  padding-left: 10px !important;
+  padding-right:10px !important;
+}
+
+p.answer:before {
+  content: " " !important;
+  width: 0px !important;
+  height: 0px !important;
+  position: absolute !important;
+  border: 20px solid !important;
+  border-color: grey grey transparent transparent !important;
+  left: -38px !important;
+  top: -5px !important;
+}
+
+p.lmao{
+	position: sticky !important;
+	top: 0 !important; /* required */
+	border: 20px solid !important;
+	border-color: black !important;
+}
+
+.alpha{
+	width:330px !important; 
+	height:400px !important;
+	overflow: auto !important;
+	background-color: white !important;
+	display: flex !important;
+	flex-direction: column !important;
+}
+.beta{
+	width:330px !important; 
+	height:450px !important;
+	display: flex !important;
+	flex-direction: column !important;
+
+}
+.delta{
+	position: sticky !important;
+	top: 20px !important; /* required */
+	//float: right !important;
+	margin-right: 10px !important;
+	display: flex !important;
+	flex-direction: column !important;
+	-webkit-box-shadow: 2px 2px 4px #888 !important;
+	-moz-box-shadow: 2px 2px 4px #888 !important;
+	box-shadow: 0px 0px 6px #888 !important;
+    background-color: white !important;
+}
+.ChatHeader{
+		background-color:rgb(88,84,188) !important;
+		flex-grow: 1 !important;
+		align-items: stretch !important;
+		margin: 0px !important;
+		padding:10px !important;
+		text-align: center !important;
+		color:white !important;
+		-webkit-box-shadow: 0px 0px 4px #888 !important;
+		z-index:999 !important;
+}
+.searchBar{
+	display: flex !important;
+	flex-direction: row !important;
+	//flex-grow:1 !important;	
+	width:330px !important;
+	margin:5px !important;
+	margin-top: 4px !important;
+    
+}
+.searchRequest{
+	width: 230px !important;	
+	font-family: Arial, Helvetica, sans-serif !important;
+	font-size: 15px !important;
+	margin-top:2px !important;
+	border: 2px solid transparent !important;
+	border-radius: 25px !important;
+	padding-left: 10px !important;
+	padding-right: 10px !important;
+	outline:none !important;
+	-webkit-box-shadow: 2px 2px 4px #888 !important;
+  -moz-box-shadow: 2px 2px 4px #888 !important;
+  box-shadow: 2px 2px 4px #888 !important;
+}
+
+.searchButton{
+	width: 60px !important;
+    text-align: center !important;
+	background-color:rgb(88,84,188) !important;
+    padding: 0px !important;
+	color: white !important;
+	margin-top:5px !important;
+	font-size: 25px !important;
+	margin-left:5px !important;
+	border: 1px solid transparent !important;
+	border-radius: 25px !important;
+	cursor:pointer !important;
+	-webkit-box-shadow: 2px 2px 4px #888 !important;
+  -moz-box-shadow: 2px 2px 4px #888 !important;
+  box-shadow: 2px 2px 4px #888 !important;
+}
+
+
+/* ------------------------ Style for initial search START ------------------------ */
+.firstSearchButton{
+	width: 60px !important;
+  //  text-align: center !important;  <--------- Here
+   // line-height: 65px !important;   <--------- Here
+	background-color:rgb(88,84,188) !important;
+    padding: 0px !important;
+	color: white !important;
+	margin-top:5px !important;
+	font-size: 25px !important;
+	//margin-left:5px !important;
+	border: 1px solid transparent !important;
+	border-radius: 25px !important;
+	cursor:pointer !important;
+	-webkit-box-shadow: 2px 2px 4px #888 !important;
+ 	-moz-box-shadow: 2px 2px 4px #888 !important;
+  	box-shadow: 2px 2px 4px #888 !important;
+    margin-left: 0.05%;
+} 
+
+.originalSearch{
+    display: block;
+    position:fixed; 
+    top:auto;
+    bottom:20px; 
+    z-index:999; 
+//    border: 1px solid purple;
+    padding: 10px;
+    padding-left: 0.05%;
+    padding-right: 0.05%;
+    margin: auto;
+    right: 10%; 
+    left:10%;
+}
+.firstSearchField{
+    margin:auto;
+    margin-left: 0%;
+    padding:7px;
+    width:90%;
+    border-radius: 25px !important;
+}
+.firstSearchField:focus{
+    outline:none;
+}
+
+.firstSearchBar{
+    display: flex;
+	flex-direction: row;
+	width:98%;
+    justify-content: space-around;
+	margin-left: auto;
+    margin-right: auto;
+
+
+}
+
+
+/* Possibly to edit disclaimers later
+.disclaimer{}
+*/
+
+/* ------------------------ Style for initial search END ------------------------ */
+
+
+    </style>
+    <script>
+        //the thing below does not work but the one in the body does, why?
+        function showChatForm(value){
+            if(value){
+                jQuery("#searchForm").show();
+            }else{
+                jQuery("#searchForm").hide();
+            }
+        }
+        
+        
+        function displayUser(param){      
+			var para2 = document.createElement("P");                 // Create a <p> element
+			para2.innerHTML = "User Says:<br>" + param;                // Insert text
+            para2.className = "speech";
+			document.getElementById("alpha").appendChild(para2);     // Append <p> to <div> with id="myDIV"
+        }
+       
+        
+        function clearDisplay(){           
+            var para2 = document.createElement("P");                 // Create a <p> element
+			para2.innerHTML = "This is a paragraph.";                // Insert text
+            para2.className = "speech";
+			document.getElementById("alpha").appendChild(para2);     // Append <p> to <div> with id="myDIV"
+            
+            document.getElementById("clearButton").value = "pressed";
+        }
+        
+        function displayMedunova(param){
+            <?php
+            require_once("ReturnAnswer.php");	
+            if (isset($_REQUEST['answer'])){
+                $s = $_REQUEST['answer'];
+            }else{
+                $s = "Error 500";
+            }
+            ?>
+            var m = '<?php echo $s ;?>';
+            var para2 = document.createElement("P");                 // Create a <p> element
+			para2.innerHTML = "Medunova Says:<br>" + m;                // Insert text
+            para2.className = "answer";
+			document.getElementById("alpha").appendChild(para2);     // Append <p> to <div> with id="myDIV"
+            //txtArea = document.getElementById("results");
+            //txtArea.value = "Medunova Says:\n" + m + '\n\n' + txtArea.value + '\n';
+            
+		}
+            
+         function bbh(){
+         	document.getElementById("results").value += "habibi\n";
+         }
+            
+         function trial(){
+         jQuery.getJSON("get-search.php", {}, function(data){
+                document.getElementById("results").value += "habibi";
+                jQuery("#status").html('trial');
+				});		
+         }
+        
+        jQuery(function(){
+        		showChatForm(false);
+                
+				jQuery('#searchButton').on('click',function(){
+                	//var para2 = document.createElement("P");                 // Create a <p> element
+					//para2.innerHTML = "something happened";                // Insert text
+					//document.getElementById("testing").appendChild(para2);     // Append <p> to <div> with id="myDIV"
+
+
+                	if(document.getElementById("searchRequest").value != ""){
+                    	showChatForm(true);
+                 		let param = document.getElementById("searchRequest").value;   	
+               			displayUser(param);
+                        displayMedunova(param);
+                    }
+				});
+                
+                jQuery('#firstSearchButton').on('click',function(){
+                	if(document.getElementById("firstSearchField").value != ""){
+                    	showChatForm(true);
+                 		let param = document.getElementById("firstSearchField").value;   	
+               			displayUser(param);
+                        displayMedunova(param);
+                    }
+				});
+                
+			});
+            
+    </script>
+    </head>
+    
+    <body>
+   
+    
+    <form id="searchForm"> 
+        <div class="search" style="position:fixed; top:20px; z-index:999; right:8px;">
+    <div class='delta'>
+			<h1 class='ChatHeader'>MEDUNOVA</h1>
+			<div class='beta'>
+				<div id="alpha" class="alpha"> 
+				<!--Below are examples of a user, speech, and a chat, answer, responses-->
+				
+					<p class='answer'>Hello, welcome to the Medunova chat Experience, how can I help you today? <br>
+                    Please note that the data we provide is from our product monograph.
+					</p>
+					
+
+				</div>
+				<div class='searchBar'>
+					<input type="text" id="searchRequest" class="searchRequest" placeholder="Do you have a question?">
+                    <input id="searchButton" class="searchButton" type="button" value="➤"/>
+                    <!-- <input id="clearButton" type="button" value="clear" onclick="clearDisplay();"/> -->
+				</div>
+                <div id="testing">
+                </div>
+			</div>
+		</div>
+    </div>
+    </form>  
+    <div class = 'originalSearch'>
+        <div class='firstSearchBar'>
+            
+            <input type="text" id="firstSearchField" class="firstSearchField" placeholder="Do you have a question?">
+            <button id='firstSearchButton' class='firstSearchButton'> ➤</button> 
+        </div>
+    </div>
+    </body>
+</html>

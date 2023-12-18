@@ -1,0 +1,4 @@
+[26-Feb-2021 00:43:36 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function add_action() in /home/kiubeta/public_html/medunova/wp-content/plugins/medunova-search/medunova-search-plugin.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/kiubeta/public_html/medunova/wp-content/plugins/medunova-search/medunova-search-plugin.php on line 34
